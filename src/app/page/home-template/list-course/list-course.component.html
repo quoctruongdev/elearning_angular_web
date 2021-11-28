@@ -1,0 +1,18 @@
+<!-- <app-slider></app-slider> -->
+
+<div class="container list-course">
+  <h1>KHÓA HỌC MỚI NHẤT:</h1>
+
+  <div class="row">
+    <div
+      class="col col-md-4 col-lg-3"
+      *ngFor="let dataList of listCourse; let i = index"
+    >
+      <ng-container *ngIf="i <= 7"
+        ><app-course [listCourse]="dataList"></app-course
+      ></ng-container>
+    </div>
+  </div>
+</div>
+<!-- <app-footer></app-footer> -->
+<app-modal></app-modal>

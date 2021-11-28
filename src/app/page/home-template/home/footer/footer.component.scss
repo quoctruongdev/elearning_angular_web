@@ -1,0 +1,31 @@
+#footer {
+  padding: 20px 0 0 0;
+  margin-top: 50px;
+  background-size: cover;
+  background-attachment: scroll;
+  background-origin: content-box;
+  background-image: url(https://w.ladicdn.com/s1440x347/5b1605af9066d9507109d716/pngtreescience-and-technology-business-the_976370-1565233145.jpg);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  p,
+  h2 {
+    font-size: 25px;
+    text-align: center;
+    color: #fff;
+    line-height: 32px;
+  }
+  h2 {
+    color: #000;
+  }
+  .footer__img {
+    width: 150px;
+  }
+  .footer__form {
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 20px 0 50px auto;
+    h2 {
+      margin-top: 15px;
+    }
+  }
+}

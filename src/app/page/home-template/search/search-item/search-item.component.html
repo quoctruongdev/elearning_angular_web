@@ -1,0 +1,21 @@
+<div class="search__img">
+  <img
+    src="{{ searchItem.hinhAnh }}"
+    onerror="this.src='https://elearning0706.cybersoft.edu.vn/hinhanh/lap-trinh-fullstack-java-6.jpeg'"
+    alt=".."
+  />
+</div>
+<div class="search__content">
+  <div class="search__content-text">
+    <a
+      routerLink="/detail/{{ searchItem.maKhoaHoc }}"
+      [queryParams]="{
+        tenKhoahoc: searchItem.tenKhoaHoc,
+        maKhoaHoc: searchItem.maKhoaHoc
+      }"
+    >
+      <h2 class="btn btn-outline-info">{{ searchItem.tenKhoaHoc }}</h2>
+    </a>
+    <p>{{ searchItem.moTa }}</p>
+  </div>
+</div>

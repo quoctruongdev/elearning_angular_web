@@ -1,0 +1,76 @@
+<app-navbar-home></app-navbar-home>
+<div id="auth">
+  <div class="container">
+    <div class="auth">
+      <div class="row">
+        <div class="col-md-12">
+          <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+            <h1>ĐĂNG NHẬP</h1>
+            <div class="form-group">
+              <label>Tài Khoản</label>
+              <input
+                class="form-control"
+                type="text"
+                name="taiKhoan"
+                ngModel
+                required
+                minlength="7"
+                maxlength="15"
+                #TaiKhoan="ngModel"
+              />
+              <div
+                class="text-danger mt-1"
+                *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)"
+              >
+                <div *ngIf="TaiKhoan.errors['required']">
+                  Tài khoản không được để trống
+                </div>
+                <div
+                  *ngIf="
+                    TaiKhoan.errors['minlength'] || TaiKhoan.errors['maxlength']
+                  "
+                >
+                  Độ dài ký tự từ 7-15
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Mật khẩu</label>
+              <input
+                class="form-control"
+                type="password"
+                name="matKhau"
+                ngModel
+                required
+                minlength="4"
+                #PassWord="ngModel"
+              />
+              <div
+                class="text-danger mt-1"
+                *ngIf="PassWord.errors && (PassWord.dirty || PassWord.touched)"
+              >
+                <div *ngIf="PassWord.errors['required']">
+                  * Mật khẩu không được để trống
+                </div>
+                <div *ngIf="PassWord.errors['minlength']">
+                  * Mật khẩu phải trên 4 ký tự
+                </div>
+              </div>
+            </div>
+            <div class="btn_container">
+              <button
+                class="btn btn-success mr-4"
+                [disabled]="!loginForm.valid"
+              >
+                Đăng nhập
+              </button>
+              <a class="btn btn-warning" routerLink="/register"> Đăng ký </a>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,15 @@
+<app-slider></app-slider>
+<div class="container list-course">
+  <h1>KHÓA HỌC MỚI NHẤT:</h1>
+
+  <div class="row">
+    <div
+      class="col col-md-4 col-lg-3"
+      *ngFor="let dataDanhMuc of danhmucData; let i = index"
+    >
+      <app-danhmuc [danhmucData]="dataDanhMuc"></app-danhmuc>
+    </div>
+  </div>
+</div>
+
+<!-- <app-modal></app-modal> -->

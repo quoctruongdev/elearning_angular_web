@@ -1,0 +1,290 @@
+<section id="userPage">
+  <div class="container">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a
+          class="nav-link active"
+          id="nav-home-tab"
+          data-toggle="tab"
+          href="#nav-home"
+          role="tab"
+          aria-controls="nav-home"
+          aria-selected="true"
+          >Thong tin cá nhân</a
+        >
+        <a
+          (click)="userCourseMethod()"
+          class="nav-link"
+          id="nav-profile-tab"
+          data-toggle="tab"
+          href="#nav-profile"
+          role="tab"
+          aria-controls="nav-profile"
+          aria-selected="false"
+          >Khóa học của tôi</a
+        >
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="nav-home"
+        role="tabpanel"
+        aria-labelledby="nav-home-tab"
+      >
+        <!-- THÔNG TIN KHÓA HỌC -->
+
+        <div class="userPage__profile mt-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-7 col-md-6 col-lg-4 text-center">
+                <div class="card-container">
+                  <div class="upper-container">
+                    <div class="image-container">
+                      <img
+                        src="https://anhdep123.com/wp-content/uploads/2021/02/hinh-nen-gai-xinh-full-hd-cho-dien-thoai.jpg"
+                      />
+                    </div>
+                  </div>
+                  <div class="lower-container">
+                    <div>
+                      <h3>
+                        {{ parseUser.taiKhoan }}
+                      </h3>
+                      <h4>{{ parseUser.hoTen }}</h4>
+                    </div>
+                    <div>
+                      <p>Email: {{ parseUser.email }}</p>
+                    </div>
+                    <div class="profile-icon">
+                      <span class="material-icons"> email </span
+                      ><span class="material-icons"> phone </span>
+                      <span class="material-icons"> smart_display </span>
+                      <span class="material-icons"> sports_esports </span>
+                    </div>
+                    <div>
+                      <a (click)="changeInfo()" class="btn">Đổi thông tin</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5 col-md-6 col-lg-8">
+                <div class="userPage__profile-form">
+                  <h1>Đổi thông tin:</h1>
+
+                  <form
+                    #updateForm="ngForm"
+                    (ngSubmit)="update(updateForm.value)"
+                  >
+                    <div class="form-group">
+                      <label>Tài Khoản</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="taiKhoan"
+                        ngModel="{{ changeInfoUser?.taiKhoan }}"
+                        required
+                        minlength="7"
+                        maxlength="15"
+                        #TaiKhoan="ngModel"
+                      />
+                      <div
+                        class="text-danger mt-1"
+                        *ngIf="
+                          TaiKhoan.errors &&
+                          (TaiKhoan.dirty || TaiKhoan.touched)
+                        "
+                      >
+                        <div *ngIf="TaiKhoan.errors['required']">
+                          Tài khoản không được để trống
+                        </div>
+                        <div
+                          *ngIf="
+                            TaiKhoan.errors['minlength'] ||
+                            TaiKhoan.errors['maxlength']
+                          "
+                        >
+                          Độ dài ký tự từ 7-15
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Mật khẩu</label>
+                      <input
+                        class="form-control"
+                        type="password"
+                        name="matKhau"
+                        [ngModel]="changeInfoUser?.matKhau"
+                        required
+                        minlength="4"
+                        #Pass="ngModel"
+                      />
+                      <div
+                        class="text-danger mt-1"
+                        *ngIf="Pass.errors && (Pass.dirty || Pass.touched)"
+                      >
+                        <div *ngIf="Pass.errors['required']">
+                          Mật khẩu không được để trống
+                        </div>
+                        <div *ngIf="Pass.errors['minlength']">
+                          Độ dài ký tự trên 4
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="email"
+                        [ngModel]="changeInfoUser?.email"
+                        required
+                        #Email="ngModel"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                      />
+                      <div
+                        class="text-danger mt-1 mt-1"
+                        *ngIf="Email.errors && (Email.dirty || Email.touched)"
+                      >
+                        <div *ngIf="Email.errors['required']">
+                          Email không được để trống
+                        </div>
+                        <div *ngIf="Email.errors['pattern']">
+                          Email không hợp lệ
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Họ tên</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="hoTen"
+                        [ngModel]="changeInfoUser?.hoTen"
+                        required
+                        maxlength="20"
+                        #HoTen="ngModel"
+                      />
+                      <div
+                        class="text-danger mt-1"
+                        *ngIf="HoTen.errors && (HoTen.dirty || HoTen.touched)"
+                      >
+                        <div *ngIf="HoTen.errors['required']">
+                          Họ tên không được để trống
+                        </div>
+                        <div *ngIf="HoTen.errors['maxlength']">
+                          Độ dài ký tự không quá 15
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Số điện thoại</label>
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="soDT"
+                        [ngModel]="changeInfoUser?.soDt"
+                        required
+                        minlength="10"
+                        maxlength="10"
+                        #soDT="ngModel"
+                      />
+
+                      <div
+                        class="text-danger mt-1"
+                        *ngIf="soDT.errors && (soDT.dirty || soDT.touched)"
+                      >
+                        <div *ngIf="soDT.errors['required']">
+                          Số điện thoại không được để trống
+                        </div>
+                        <div *ngIf="soDT.errors['maxlength']">
+                          Độ dài ký tự trên 10
+                        </div>
+                        <div *ngIf="soDT.errors['minlength']">
+                          Số điện thoại phải trên 10 số
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01"
+                          >Loại</label
+                        >
+                      </div>
+                      <select
+                        [ngModel]="changeInfoUser?.maLoaiNguoiDung"
+                        name="maLoaiNguoiDung"
+                        class="custom-select"
+                        id="inputGroupSelect01"
+                      >
+                        <option seclected>...</option>
+                        <option value="HV">Học viên</option>
+                        <option value="GV">Giáo vụ</option>
+                      </select>
+                    </div>
+                    <div class="btn_container">
+                      <a href="user">
+                        <button
+                          class="btn btn-warning"
+                          [disabled]="!updateForm.valid"
+                        >
+                          Lưu
+                        </button>
+                      </a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="nav-profile"
+        role="tabpanel"
+        aria-labelledby="nav-profile-tab"
+      >
+        <!-- CÁC KHÓA HỌC -->
+
+        <h2>Tổng số khóa học được tìm thấy là: {{ userListCourse.length }}</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">STT</th>
+              <th scope="col">Mã khóa học</th>
+              <th scope="col">Tên khoa học</th>
+              <th scope="col">Hủy</th>
+            </tr>
+          </thead>
+          <ng-container *ngFor="let item of userListCourse; let tong = index">
+            <tbody>
+              <tr>
+                <th scope="row">{{ tong + 1 }}</th>
+                <td>{{ item.maKhoaHoc }}</td>
+                <td>{{ item.tenKhoaHoc }}</td>
+                <td scope="col">
+                  <button
+                    routerLink="/detail/{{ item.maKhoaHoc }}"
+                    class="btn btn-info mr-3"
+                  >
+                    Xem lại
+                  </button>
+                  <a href="/user">
+                    <button
+                      class="btn btn-danger"
+                      (click)="deleteCourse(item.maKhoaHoc)"
+                    >
+                      Hủy
+                    </button></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </ng-container>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

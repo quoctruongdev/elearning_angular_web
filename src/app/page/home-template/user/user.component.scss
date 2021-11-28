@@ -1,0 +1,107 @@
+#userPage {
+  padding-top: 100px;
+  .userPage__profile-form {
+    background-color: #fff;
+    box-shadow: 0 0 5px #0000004d;
+    padding: 10px;
+    border-radius: 4px;
+  }
+}
+
+.card-container {
+  width: 300px;
+  height: 430px;
+  background: #fff;
+  border-radius: 6px;
+  //   position: absolute;
+  top: 50%;
+  left: 50%;
+  //   transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px #0000004d;
+  overflow: hidden;
+  display: inline-block;
+}
+.upper-container {
+  height: 150px;
+  background: #181815;
+  background-image: url(https://img.nhandan.com.vn/Files/Images/2021/06/05/thac_bangioc1-1622852961963.JPG);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image-container {
+  background: white;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+
+  transform: translate(100px, 100px);
+}
+.image-container img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+.lower-container {
+  height: 280px;
+  background: #fff;
+  padding: 20px;
+  padding-top: 80px;
+  text-align: center;
+}
+.lower-container h3,
+h4 {
+  box-sizing: border-box;
+  line-height: 0.6;
+  font-weight: lighter;
+}
+.lower-container h4 {
+  color: #086114;
+  opacity: 0.6;
+  font-weight: bold;
+}
+.lower-container p {
+  font-size: 16px;
+  color: gray;
+  margin-bottom: 30px;
+}
+.lower-container .btn {
+  padding: 12px 20px;
+  background: #ffee00;
+  border: none;
+  color: black;
+  border-radius: 30px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in;
+}
+.lower-container .btn:hover {
+  background: transparent;
+  color: #7f00ff;
+  border: 2px solid #7f00ff;
+}
+
+#search {
+  padding-top: 63px;
+
+  .search__item {
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    border: 1px dashed orange;
+  }
+}
+.table-tr {
+  display: block;
+  min-width: 100%;
+}
+
+.profile-icon {
+  span {
+    font-size: 35px;
+    color: rgb(211, 61, 7);
+    margin: 0 5px;
+  }
+}

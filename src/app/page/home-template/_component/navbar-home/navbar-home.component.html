@@ -1,0 +1,136 @@
+<!-- NAVBAR HOME -->
+<section id="nav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav align-items-center mr-auto navbar__right">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              ><img
+                class="nav__logo"
+                src="https://cybersoft.edu.vn/wp-content/uploads/2017/03/MIN-OP1.png"
+                alt="https://cybersoft.edu.vn/wp-content/uploads/2017/03/MIN-OP1.png"
+            /></a>
+          </li>
+          <img
+            class="nav__top100"
+            src="../../../../../assets/img/top100-01.svg"
+            alt="Top"
+          />
+
+          <li
+            class="
+              nav-item nav__bottom-right
+              btn btn-outline-success
+              navbar__listCourse-container
+            "
+          >
+            <span class="material-icons"> reorder </span>
+            <a class="nav-link" routerLinkActive="active"> Danh mục</a>
+            <div class="navbar__listCourse">
+              <ul class="navbar__listCourses">
+                <li *ngFor="let danhMuc of danhMucKhoaHoc">
+                  <a
+                    routerLink="/category/{{ danhMuc.maDanhMuc }}"
+                    routerLinkActive="router-link-active"
+                    [queryParams]="{
+                      maDanhMuc: danhMuc.maDanhMuc,
+                      maNhom: 'GP01'
+                    }"
+                    ><span class="material-icons"> navigate_next </span>
+                    {{ danhMuc.tenDanhMuc }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Nhập khóa học cần tìm"
+                [(ngModel)]="valueSearchInput"
+              />
+              <div class="input-group-append">
+                <button
+                  class="navbar__input btn btn-outline-secondary"
+                  type="submit"
+                  routerLink="/search/{{ valueSearchInput }}"
+                  [queryParams]="{
+                    tenKhoaHoc: valueSearchInput
+                  }"
+                >
+                  <span class="material-icons"> search </span>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav align-items-center ml-auto navbar__right">
+          <ng-container *ngIf="checkLogin1">
+            <li class="nav-item nav__bottom-right btn btn-outline-success">
+              <span class="material-icons"> login </span>
+              <a class="nav-link" routerLink="/auth" routerLinkActive="active">
+                Đăng nhập</a
+              >
+            </li>
+
+            <li class="nav-item nav__bottom-right btn btn-warning">
+              <span class="material-icons"> how_to_reg </span>
+              <a
+                class="nav-link"
+                routerLink="/register"
+                routerLinkActive="active"
+              >
+                Đăng ký</a
+              >
+            </li></ng-container
+          >
+          <ng-container *ngIf="checkLogin">
+            <li class="nav-item">
+              <span class="material-icons"> account_circle </span>
+              <a
+                class="nav-link"
+                routerLink="/user"
+                routerLinkActive="active"
+                >{{ user?.hoTen }}</a
+              >
+            </li>
+          </ng-container>
+          <ng-container *ngIf="checkLogin">
+            <li class="nav-item nav__bottom-right text-light btn btn-danger">
+              <span class="material-icons"> logout </span>
+              <a
+                class="nav-link"
+                href="/"
+                (click)="checkOut()"
+                routerLinkActive="active"
+              >
+                Đăng xuất</a
+              >
+            </li></ng-container
+          >
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>

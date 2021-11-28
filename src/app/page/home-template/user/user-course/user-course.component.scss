@@ -1,0 +1,16 @@
+.search__img {
+  img {
+    width: 200px;
+    height: 150px;
+    border-radius: 4px;
+    margin-right: 20px;
+    box-shadow: 0 0 5px #0000004d;
+  }
+}
+.search__content {
+  .search__content-text {
+    h2 {
+      padding: 0 auto !important;
+    }
+  }
+}

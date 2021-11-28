@@ -1,0 +1,28 @@
+<mat-nav-list>
+  <div class="logo py-4">
+    <a routerLink="/">
+      <img src="/assets/img/elearning-logo.png" alt="Company Logo" />
+    </a>
+  </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader class="mt-2">APPLICATIONS</h2>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="dashboard">
+    <mat-icon>dashboard</mat-icon> Dashboard
+  </a>
+  <a
+    mat-list-item
+    routerLinkActive="list-item-active"
+    routerLink="user-management"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <mat-icon>person</mat-icon> User
+  </a>
+  <a
+    mat-list-item
+    routerLinkActive="list-item-active"
+    routerLink="course-management"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <mat-icon>book</mat-icon> Course
+  </a>
+</mat-nav-list>

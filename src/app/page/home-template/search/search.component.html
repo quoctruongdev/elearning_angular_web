@@ -1,0 +1,13 @@
+<section id="search">
+  <div class="search__total">
+    <h2>Tổng số khóa học được tìm thấy là: {{ searchData.length }}</h2>
+  </div>
+  <div
+    class="seach__list container"
+    *ngFor="let item of searchData; let tong = index"
+  >
+    <div class="search__item">
+      <app-search-item [searchItem]="item" class="d-flex"></app-search-item>
+    </div>
+  </div>
+</section>

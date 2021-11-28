@@ -1,0 +1,13 @@
+#auth {
+  padding-top: 100px;
+  .auth {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #0000004d;
+    padding: 15px;
+    .btn_container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.card {
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #0000004d;
+  min-height: 300px;
+  background: #fff;
+  color: #525151;
+  margin: 20px 0;
+  .card-body {
+    padding: 0;
+  }
+  .card-img-top {
+    border-radius: 50%;
+    margin: 10px auto;
+    width: 150px;
+    height: 150px;
+    border: 3px solid #58aa47;
+
+    &:hover {
+      transform: scale(115%);
+      transition: all linear 0.5s;
+    }
+    &::before {
+      animation: 1.2s ease-in-out 0s normal none infinite running
+        ring-alo-circle-anim;
+      background-color: transparent;
+      border: 2px solid rgba(30, 30, 30, 0.4);
+      border-radius: 100%;
+      height: 70px;
+      left: 10px;
+      opacity: 0.1;
+      position: absolute;
+      top: 12px;
+      transform-origin: 50% 50% 0;
+      transition: all 0.5s ease 0s;
+      width: 70px;
+    }
+  }
+}

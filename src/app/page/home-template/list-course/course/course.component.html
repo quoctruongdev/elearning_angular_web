@@ -1,0 +1,31 @@
+<div class="card" style="width: 100%">
+  <img
+    src="{{ listCourse.hinhAnh }}"
+    onerror="this.src='/assets/img/NotIMG.jpg'"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+    <h2 class="card-title">{{ listCourse.tenKhoaHoc | slice: 0:20 }} ...</h2>
+    <p class="card-text">{{ listCourse.moTa | slice: 0:30 }} ...</p>
+    <div class="d-flex">
+      <a
+        routerLink="/detail/{{ listCourse.maKhoaHoc }}"
+        class="btn btn-primary"
+        [queryParams]="{
+          tenKhoahoc: listCourse.tenKhoaHoc,
+          maKhoaHoc: listCourse.maKhoaHoc
+        }"
+        >Đăng ký</a
+      >
+      <button
+        class="btn btn-warning ml-2"
+        data-toggle="modal"
+        data-target="#exampleModal"
+        (click)="xemNhanh()"
+      >
+        Xem
+      </button>
+    </div>
+  </div>
+</div>

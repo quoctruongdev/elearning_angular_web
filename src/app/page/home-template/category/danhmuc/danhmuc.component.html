@@ -1,0 +1,26 @@
+<div class="card" style="width: 100%">
+  <img
+    src="{{ danhmucData.hinhAnh }}"
+    onerror="this.src='https://cybersoft.edu.vn/wp-content/uploads/2021/03/20200812_193032-jg-1.jpg'"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+    <h2 class="card-title">{{ danhmucData.tenKhoaHoc | slice: 0:20 }} ...</h2>
+    <p class="card-text">{{ danhmucData.moTa | slice: 0:30 }} ...</p>
+    <div class="d-flex">
+      <a
+        routerLink="/detail/{{ danhmucData.maKhoaHoc }}"
+        class="btn btn-primary"
+        [queryParams]="{
+          tenKhoahoc: danhmucData.tenKhoaHoc,
+          maKhoaHoc: danhmucData.maKhoaHoc
+        }"
+        >Chi tiết</a
+      >
+      <button class="btn btn-warning ml-2" (click)="dangKyKhoaHoc()">
+        Đăng ký
+      </button>
+    </div>
+  </div>
+</div>

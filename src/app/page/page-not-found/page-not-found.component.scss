@@ -1,0 +1,21 @@
+.pageNotePage {
+  padding-top: 200px;
+}
+.pageNotePage__logo {
+  border-right: 1px solid rgba(0, 0, 0, 0.247);
+  img {
+    width: 100%;
+  }
+}
+.pageNotePage__text {
+  h1 {
+    font-size: 90px;
+    line-height: 95px;
+  }
+  p {
+    font-size: 25px;
+  }
+  a {
+    font-size: 25px;
+  }
+}
