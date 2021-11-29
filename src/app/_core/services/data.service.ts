@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-let urlApi = '';
+let urlApi = 'https://elearningnew.cybersoft.edu.vn/api';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ let urlApi = '';
 export class DataService {
   shareData: any;
   constructor(private http: HttpClient) {
-    urlApi = environment.urlApi;
+    
   }
 
   get(uri: any): Observable<any> {
