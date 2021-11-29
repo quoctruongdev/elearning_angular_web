@@ -24,7 +24,7 @@ export class DetailCourseComponent implements OnInit {
   }
   getParamsFromUrl() {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.id);
+    
 
     this.activatedRoute.queryParams.subscribe((value: any) => {
       this.param = value;
@@ -36,7 +36,7 @@ export class DetailCourseComponent implements OnInit {
       .get(`QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${this.id}`)
       .subscribe((result: any) => {
         this.dataService = result;
-        console.log(result);
+        
       });
   }
 
@@ -45,7 +45,7 @@ export class DetailCourseComponent implements OnInit {
       alert('vui lòng đăng nhập tài khoản');
       this.router.navigate(['/auth']);
     }
-    console.log(this.param);
+   
 
     const thongtin = {
       maKhoaHoc: this.param.maKhoaHoc,
@@ -56,7 +56,7 @@ export class DetailCourseComponent implements OnInit {
       .postCourse(thongtin, 'QuanLyKhoaHoc/GhiDanhKhoaHoc')
       .subscribe((result: any) => {
         alert(' Đăng ký khóa học thành công');
-        console.log(result);
+        
       });
   }
 }
