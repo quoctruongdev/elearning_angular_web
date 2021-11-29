@@ -18,7 +18,7 @@ export class AddUsersComponent implements OnInit {
   addUser(user: any): void {
     user.maLoaiNguoiDung = this.newValue;
     user.maNhom = 'GP01';
-    console.log(user);
+   
     this.data
       .post('QuanLyNguoiDung/ThemNguoiDung', user)
       .subscribe((result) => {
