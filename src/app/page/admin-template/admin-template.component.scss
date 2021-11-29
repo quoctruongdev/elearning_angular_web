@@ -19,11 +19,11 @@ mat-drawer {
 
 @media (max-width: 576px) {
   mat-drawer {
-    width: 100px !important;
+    width: 0px !important;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 400px) {
   .hide-on-small-screens {
-      display: none;
+    display: none;
   }
 }

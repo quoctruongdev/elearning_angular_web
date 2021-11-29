@@ -1,7 +1,7 @@
 <mat-drawer-container>
-  <mat-drawer class="hide-on-small-screens" mode="side" [opened]="sideBarOpen">
+  <mat-drawer mode="side" [opened]="sideBarOpen">
     <!-- <mat-drawer mode="side" opened="false"> -->
-    <app-side-nav></app-side-nav>
+    <app-side-nav #sidenav></app-side-nav>
   </mat-drawer>
   <mat-drawer-content>
     <app-header-admin

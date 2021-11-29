@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 @Component({
   selector: 'app-admin-template',
   templateUrl: './admin-template.component.html',
@@ -8,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 export class AdminTemplateComponent implements OnInit {
   title = 'admin-panel-layout';
   sideBarOpen = true;
-  constructor() {}
 
+  constructor() {}
   ngOnInit(): void {}
 
   sideBarToggler() {

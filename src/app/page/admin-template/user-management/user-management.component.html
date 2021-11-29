@@ -89,15 +89,14 @@
                 </tbody>
               </ng-container>
             </table>
-            <div class="pagination container">
-              <ngb-pagination
-                class="d-flex justify-content-end pt-3"
-                [(page)]="page"
-                [pageSize]="pageSize"
-                [collectionSize]="listUser.length"
-                size="sm"
-              ></ngb-pagination>
-            </div>
+            <ngb-pagination
+              class="d-flex justify-content-end pt-3"
+              [(page)]="page"
+              [pageSize]="pageSize"
+              [collectionSize]="listUser.length"
+              [maxSize]="5"
+              size="sm"
+            ></ngb-pagination>
           </div>
         </div>
       </div>

@@ -25,6 +25,7 @@ import { RegisterCourseComponent } from './course-management/register-course/reg
   ],
   imports: [
     CommonModule,
+
     AdminTemplateRoutingModule,
     ComponentsModule,
     NgAntdModule,

@@ -14,8 +14,9 @@ export class RegisterCourseComponent implements OnInit {
 
   page: any = 1;
   pageSize: any = 5;
-  pages: any = 1;
-  pageSizes: any = 5;
+
+  page2: any = 1;
+  pageSize2: any = 5;
 
   CousreID: any;
   selectedValue: any;

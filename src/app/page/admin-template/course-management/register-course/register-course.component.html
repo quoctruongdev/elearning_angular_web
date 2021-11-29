@@ -44,7 +44,6 @@
                     />
                     <datalist id="brow">
                       <option
-                        ngModel
                         *ngFor="let item of subListUserWaitingReview"
                         [ngValue]="item"
                       >
@@ -66,7 +65,7 @@
                 </a>
               </div>
               <div class="title__sub">
-                <h3>Người dùng chờ xác thực (nếu không có không hiển thị)</h3>
+                <h3>Người dùng chờ xác thực</h3>
               </div>
 
               <div class="wrap-table100">
@@ -136,7 +135,7 @@
             <!-- break -->
             <div class="wrapper wrapper--w790">
               <div class="title__sub">
-                <h3>Người dùng đã ghi danh (nếu không có không hiển thị)</h3>
+                <h3>Người dùng đã ghi danh</h3>
               </div>
 
               <div class="wrap-table100">
@@ -158,13 +157,13 @@
                             *ngFor="
                               let item of listUserConfirmed
                                 | slice
-                                  : (pages - 1) * pageSizes
-                                  : pages * pageSizes;
-                              let index = index
+                                  : (page2 - 1) * pageSize2
+                                  : page2 * pageSize2;
+                              let key = index
                             "
                           >
                             <td class="column1">
-                              {{ index + 1 + (pages - 1) * pageSizes }}
+                              {{ key + 1 + (page2 - 1) * pageSize2 }}
                             </td>
                             <td class="column2">{{ item.taiKhoan }}</td>
                             <td class="column3">{{ item.hoTen }}</td>
@@ -189,8 +188,8 @@
                   </div>
                   <ngb-pagination
                     class="d-flex justify-content-end pt-3"
-                    [(page)]="pages"
-                    [pageSize]="pageSizes"
+                    [(page)]="page2"
+                    [pageSize]="pageSize2"
                     [collectionSize]="listUserConfirmed.length"
                     size="sm"
                   ></ngb-pagination>

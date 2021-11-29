@@ -83,4 +83,7 @@ export class RegisterUserComponent implements OnInit {
         }
       });
   }
+  closeModal() {
+    window.location.reload();
+  }
 }
