@@ -32,7 +32,7 @@ export class EditCouserComponent implements OnInit {
     let reader = new FileReader();
 
     let file: File = event.target.files[0];
-    console.log(file);
+   
     if (file) {
       this.fileName = file.name;
     }
@@ -43,12 +43,12 @@ export class EditCouserComponent implements OnInit {
   }
 
   chooseListCourse(event: any) {
-    console.log(event);
+    
     return (this.newValue = event);
   }
 
   editCourse(course: any): void {
-    console.log(course);
+    
 
     course.hinhAnh = this.image;
     course.maNhom = 'GP01';
