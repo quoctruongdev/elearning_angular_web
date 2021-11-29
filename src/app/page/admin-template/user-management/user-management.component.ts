@@ -29,7 +29,7 @@ export class UserManagementComponent implements OnInit {
     this.subListUser = this.data
       .get('QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP01')
       .subscribe((result: any) => {
-        console.log(result);
+        
         this.listUser = result;
       });
   }
@@ -41,7 +41,7 @@ export class UserManagementComponent implements OnInit {
         if (result) {
           alert('Xoá người dùng thành công');
           window.location.reload();
-          console.log(result.status);
+        
         }
       });
   }
@@ -85,7 +85,7 @@ export class UserManagementComponent implements OnInit {
     this.subListUser = this.data
       .get('QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP01')
       .subscribe((result: any) => {
-        console.log(result);
+     
         this.listUser = result;
       });
   }
