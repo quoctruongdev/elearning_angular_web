@@ -22,14 +22,14 @@ export class CourseManagementComponent implements OnInit {
 
   editCourse(course: any) {
     this.shareData.sharingUser(course);
-    console.log('editcourse', course);
+    
   }
 
   getCourse() {
     this.subListCourse = this.data
       .get('QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01')
       .subscribe((result: any) => {
-        console.log(result);
+      
         this.listCourse = result;
       });
   }
