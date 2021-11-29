@@ -20,10 +20,10 @@ export class RegisterComponent implements OnInit {
   }
   register(user: any) {
     user.maNhom = 'GP01';
-    console.log(user);
+    
 
     this.user1.post('QuanLyNguoiDung/DangKy', user).subscribe((result: any) => {
-      console.log(result);
+      
       this.router.navigate(['/auth']);
     });
   }
