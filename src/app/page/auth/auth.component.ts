@@ -28,11 +28,11 @@ export class AuthComponent implements OnInit {
   }
 
   login(user: any) {
-    console.log(user);
+ 
     this.userAuth
       .post('QuanLyNguoiDung/DangNhap', user)
       .subscribe((result: any) => {
-        console.log(result);
+        
         if (result.maLoaiNguoiDung === 'GV') {
           const expiry: any = new Date().getTime() + this.TIME_EXP;
 
