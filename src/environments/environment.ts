@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlApi: 'https://elearningnew.cybersoft.edu.vn/api',
+  
 };
 
 /*
