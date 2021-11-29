@@ -22,7 +22,7 @@ export class CategoryComponent implements OnInit {
   }
   getParamDanhMuc() {
     this.activaterouter.queryParams.subscribe((result: any) => {
-      console.log(result);
+      
 
       this.subListDanhMuc = this.danhMucData
         .get(
@@ -30,7 +30,7 @@ export class CategoryComponent implements OnInit {
         )
         .subscribe((value) => {
           this.danhmucData = value;
-          console.log(value);
+         
         });
     });
   }
