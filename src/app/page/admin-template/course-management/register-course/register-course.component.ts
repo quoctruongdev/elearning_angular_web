@@ -81,7 +81,7 @@ export class RegisterCourseComponent implements OnInit {
     this.item.taiKhoan = value;
     this.item.maKhoaHoc = this.CousreID;
     this.data
-      .postCourse(this.item,'/QuanLyKhoaHoc/HuyGhiDanh')
+      .postCourse(this.item,'QuanLyKhoaHoc/HuyGhiDanh')
       .subscribe((result: any) => {
         if (result) {
           alert('Huỷ thành công');
