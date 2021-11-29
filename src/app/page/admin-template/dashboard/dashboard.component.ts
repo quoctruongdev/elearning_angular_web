@@ -11,12 +11,12 @@ export class DashboardComponent implements OnInit {
 
   addUser(user: any) {
     user.maLoaiNguoiDung = 'HV';
-    (user.maNhom = 'GP01'), console.log(user);
-    console.log(user);
+    (user.maNhom = 'GP01');
+    
     this.data
       .post('QuanLyNguoiDung/ThemNguoiDung', user)
       .subscribe((result) => {
-        console.log(result);
+      
       });
   }
 }
