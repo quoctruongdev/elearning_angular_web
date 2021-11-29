@@ -50,7 +50,7 @@ export class RegisterUserComponent implements OnInit {
     this.item.taiKhoan = this.idUser;
     this.item.maKhoaHoc = this.selectedValue.maKhoaHoc;
     this.data
-      .post('QuanLyKhoaHoc/GhiDanhKhoaHoc', this.item)
+      .postCourse(this.item,'QuanLyKhoaHoc/GhiDanhKhoaHoc')
       .subscribe((result: any) => {
         if (result) {
           window.location.reload();
@@ -62,7 +62,7 @@ export class RegisterUserComponent implements OnInit {
     this.item.taiKhoan = this.idUser;
     this.item.maKhoaHoc = value;
     this.data
-      .post('QuanLyKhoaHoc/GhiDanhKhoaHoc', this.item)
+      .postCourse(this.item,'QuanLyKhoaHoc/GhiDanhKhoaHoc')
       .subscribe((result: any) => {
         if (result) {
           this.courseWaitReview = result;
@@ -75,7 +75,7 @@ export class RegisterUserComponent implements OnInit {
     this.item.taiKhoan = this.idUser;
     this.item.maKhoaHoc = value;
     this.data
-      .post('/QuanLyKhoaHoc/HuyGhiDanh', this.item)
+      .postCourse(this.item,'QuanLyKhoaHoc/HuyGhiDanh')
       .subscribe((result: any) => {
         if (result) {
           this.courseWaitReview = result.value;
