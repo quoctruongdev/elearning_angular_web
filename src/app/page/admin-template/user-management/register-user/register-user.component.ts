@@ -43,7 +43,7 @@ export class RegisterUserComponent implements OnInit {
 
   chooseCourse(event: any) {
     this.selectedValue = event;
-    console.log('fsdfsdf', event);
+   
   }
 
   registerCourse(): void {
