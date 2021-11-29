@@ -24,7 +24,7 @@ export class AddCourseComponent implements OnInit {
     let reader = new FileReader();
 
     let file: File = event.target.files[0];
-    console.log(file);
+   
     if (file) {
       this.fileName = file.name;
     }
@@ -36,12 +36,12 @@ export class AddCourseComponent implements OnInit {
 
   newValue: any = '';
   chooseListCourse(event: any) {
-    console.log(event);
+    
     return (this.newValue = event);
   }
 
   addCourse(course: any): void {
-    console.log(course);
+    
     course.maDanhMucKhoaHoc = this.newValue;
     course.hinhAnh = this.image;
     course.maNhom = 'GP01';
