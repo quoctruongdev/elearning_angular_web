@@ -1,2 +1,2 @@
 web
-http://angular-elearning-tronghieu-quoctruong.surge.sh/
+http://elearning-tronghieu-quoctruong.surge.sh/
