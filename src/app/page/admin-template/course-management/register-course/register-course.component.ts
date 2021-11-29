@@ -56,7 +56,7 @@ export class RegisterCourseComponent implements OnInit {
     this.item.maKhoaHoc = this.CousreID;
     console.log('object', this.item);
     this.data
-      .post('QuanLyKhoaHoc/GhiDanhKhoaHoc', this.item)
+      .postCourse(this.item,'QuanLyKhoaHoc/GhiDanhKhoaHoc')
       .subscribe((result: any) => {
         if (result) {
           window.location.reload();
@@ -69,7 +69,7 @@ export class RegisterCourseComponent implements OnInit {
     this.item.maKhoaHoc = this.CousreID;
     console.log('object', this.item);
     this.data
-      .post('QuanLyKhoaHoc/GhiDanhKhoaHoc', this.item)
+      .postCourse(this.item,'QuanLyKhoaHoc/GhiDanhKhoaHoc')
       .subscribe((result: any) => {
         if (result) {
           window.alert('xác nhận ');
@@ -81,7 +81,7 @@ export class RegisterCourseComponent implements OnInit {
     this.item.taiKhoan = value;
     this.item.maKhoaHoc = this.CousreID;
     this.data
-      .post('/QuanLyKhoaHoc/HuyGhiDanh', this.item)
+      .postCourse(this.item,'/QuanLyKhoaHoc/HuyGhiDanh')
       .subscribe((result: any) => {
         if (result) {
           alert('Huỷ thành công');
