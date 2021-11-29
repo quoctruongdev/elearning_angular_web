@@ -28,7 +28,7 @@ export class EditUserComponent implements OnInit {
   // }
 
   updateUser(user: any): void {
-    console.log('mới', user);
+   
     // user.maLoaiNguoiDung = this.newValue;
 
     user.maNhom = 'GP01';
