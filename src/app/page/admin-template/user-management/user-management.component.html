@@ -56,27 +56,32 @@
                             mat-button
                             color="primary"
                             data-toggle="modal"
-                            data-target="#modalRegisterCourse"
+                            data-target="#modalRegisterUser"
+                            data-backdrop="static"
+                            data-keyboard="false"
+                            (click)="CourseWaitingReview(user.taiKhoan)"
                           >
                             Ghi danh
                           </button>
-                          <a routerLink="edit-users">
-                            <button
-                              mat-icon-button
-                              color="accent"
-                              (click)="editUser(user)"
-                            >
-                              <mat-icon>edit</mat-icon>
-                            </button>
-                          </a>
+                          <div class="btn-group" style="display: inline-block">
+                            <a routerLink="edit-users">
+                              <button
+                                mat-icon-button
+                                color="accent"
+                                (click)="editUser(user)"
+                              >
+                                <mat-icon>edit</mat-icon>
+                              </button>
+                            </a>
 
-                          <button
-                            (click)="deleteUser(user.taiKhoan)"
-                            mat-icon-button
-                            color="warn"
-                          >
-                            <mat-icon>close</mat-icon>
-                          </button>
+                            <button
+                              (click)="deleteUser(user.taiKhoan)"
+                              mat-icon-button
+                              color="warn"
+                            >
+                              <mat-icon>close</mat-icon>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -84,13 +89,15 @@
                 </tbody>
               </ng-container>
             </table>
-            <ngb-pagination
-              class="d-flex justify-content-end pt-3"
-              [(page)]="page"
-              [pageSize]="pageSize"
-              [collectionSize]="listUser.length"
-              size="sm"
-            ></ngb-pagination>
+            <div class="pagination container">
+              <ngb-pagination
+                class="d-flex justify-content-end pt-3"
+                [(page)]="page"
+                [pageSize]="pageSize"
+                [collectionSize]="listUser.length"
+                size="sm"
+              ></ngb-pagination>
+            </div>
           </div>
         </div>
       </div>

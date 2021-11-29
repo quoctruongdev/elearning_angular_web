@@ -9,14 +9,12 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EditCouserComponent } from './edit-course/edit-course.component';
-import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
     CourseManagementComponent,
     AddCourseComponent,
     EditCouserComponent,
-    ModalComponent,
   ],
   imports: [
     CommonModule,

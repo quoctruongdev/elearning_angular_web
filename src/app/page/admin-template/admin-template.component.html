@@ -1,6 +1,6 @@
 <mat-drawer-container>
-  <mat-drawer mode="side" [opened]="sideBarOpen">
-    <!-- <mat-drawer mode="side" opened="true"> -->
+  <mat-drawer class="hide-on-small-screens" mode="side" [opened]="sideBarOpen">
+    <!-- <mat-drawer mode="side" opened="false"> -->
     <app-side-nav></app-side-nav>
   </mat-drawer>
   <mat-drawer-content>
@@ -10,4 +10,5 @@
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
-<app-resgiser-couser></app-resgiser-couser>
+<app-register-user></app-register-user>
+<app-register-course></app-register-course>

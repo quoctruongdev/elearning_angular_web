@@ -7,7 +7,7 @@
   <mat-divider></mat-divider>
   <h2 matSubheader class="mt-2">APPLICATIONS</h2>
   <a mat-list-item routerLinkActive="list-item-active" routerLink="dashboard">
-    <mat-icon>dashboard</mat-icon> Dashboard
+    <mat-icon>dashboard</mat-icon> <span class="text_sidenav">Dashboard</span>
   </a>
   <a
     mat-list-item
@@ -15,7 +15,7 @@
     routerLink="user-management"
     [routerLinkActiveOptions]="{ exact: true }"
   >
-    <mat-icon>person</mat-icon> User
+    <mat-icon>person</mat-icon> <span class="text_sidenav">User</span>
   </a>
   <a
     mat-list-item
@@ -23,6 +23,6 @@
     routerLink="course-management"
     [routerLinkActiveOptions]="{ exact: true }"
   >
-    <mat-icon>book</mat-icon> Course
+    <mat-icon>book</mat-icon> <span class="text_sidenav">Course</span>
   </a>
 </mat-nav-list>

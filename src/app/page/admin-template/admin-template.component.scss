@@ -6,6 +6,7 @@
 
 mat-drawer {
   width: 260px;
+  $opened: true;
 }
 mat-drawer-container {
   height: 100%;
@@ -14,4 +15,15 @@ mat-drawer-container {
 
 mat-drawer {
   background: #0f172a;
+}
+
+@media (max-width: 576px) {
+  mat-drawer {
+    width: 100px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .hide-on-small-screens {
+      display: none;
+  }
 }
