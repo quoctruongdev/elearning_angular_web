@@ -1,0 +1,209 @@
+<div
+  class="modal hide fade"
+  id="modalRegisterUser"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="modelTitleId"
+  aria-hidden="true"
+  #ModalRegiser
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="card card-5">
+        <div class="card-heading">
+          <h2 class="title">Ghi Danh</h2>
+        </div>
+        <div class="button__close">
+          <button
+            mat-icon-button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+            color="accent"
+            (click)="closeModal()"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+            <div class="wrapper wrapper--w790">
+              <div class="wrap d-flex flex-around">
+                <div class="col-lg-10 px-0">
+                  <div class="form-group">
+                    <select
+                      class="form-control"
+                      #idCourse="ngModel"
+                      (change)="chooseCourse(idCourse.value)"
+                      [(ngModel)]="selectedValue"
+                    >
+                      <option
+                        *ngFor="let item of subCourseWaitReview"
+                        [ngValue]="item"
+                      >
+                        {{ item.tenKhoaHoc }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <a>
+                  <button
+                    (click)="registerCourse()"
+                    class="mx-5"
+                    mat-raised-button
+                    color="primary"
+                    type="submit"
+                  >
+                    Ghi danh
+                  </button>
+                </a>
+              </div>
+              <div class="title__sub">
+                <h3>Khoá chờ xác thực</h3>
+              </div>
+
+              <div class="wrap-table100">
+                <div class="table100">
+                  <div class="content__tbody">
+                    <table>
+                      <thead>
+                        <tr class="table100-head">
+                          <th class="column1">STT</th>
+                          <th class="column2">Mã khoá hoc</th>
+                          <th class="column3">Tên khoá học</th>
+                          <th class="column5">Chờ xác nhận</th>
+                        </tr>
+                      </thead>
+                      <ng-container *ngIf="courseWaitReview">
+                        <tbody>
+                          <tr
+                            class="content_table"
+                            *ngFor="
+                              let item of courseWaitReview
+                                | slice: (page - 1) * pageSize:page * pageSize;
+                              let index = index
+                            "
+                          >
+                            <td class="column1">
+                              {{ index + 1 + (page - 1) * pageSize }}
+                            </td>
+                            <td class="column2">
+                              {{ item.maKhoaHoc }}
+                            </td>
+                            <td class="column3">{{ item.tenKhoaHoc }}</td>
+                            <td class="column5">
+                              <div class="example-button-row">
+                                <div class="example-flex-container">
+                                  <button
+                                    (click)="confirmCourse(item.maKhoaHoc)"
+                                    mat-button
+                                    color="primary"
+                                  >
+                                    Xác thực
+                                  </button>
+                                  <button
+                                    style="width: 40px"
+                                    mat-button
+                                    color="warn"
+                                    (click)="cancelCourse(item.maKhoaHoc)"
+                                  >
+                                    Huỷ
+                                  </button>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </ng-container>
+                    </table>
+                  </div>
+                  <ngb-pagination
+                    class="d-flex justify-content-end pt-3"
+                    [(page)]="page"
+                    [pageSize]="pageSize"
+                    [collectionSize]="courseWaitReview.length"
+                    size="sm"
+                  ></ngb-pagination>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <!-- break -->
+            <div class="wrapper wrapper--w790">
+              <div class="title__sub">
+                <h3>Khó học đã ghi danh</h3>
+              </div>
+
+              <div class="wrap-table100">
+                <div class="table100">
+                  <div class="content__tbody">
+                    <table>
+                      <thead>
+                        <tr class="table100-head">
+                          <th class="column1">STT</th>
+                          <th class="column2">Mã khoá hoc</th>
+                          <th class="column3">Tên khoá học</th>
+                          <th class="column5">Chờ xác nhận</th>
+                        </tr>
+                      </thead>
+                      <ng-container *ngIf="CourseConfirmed">
+                        <tbody>
+                          <tr
+                            class="content_table"
+                            *ngFor="
+                              let item of CourseConfirmed
+                                | slice
+                                  : (pages - 1) * pageSizes
+                                  : pages * pageSizes;
+                              let index = index
+                            "
+                          >
+                            <td class="column1">
+                              {{ index + 1 + (pages - 1) * pageSizes }}
+                            </td>
+                            <td class="column2">
+                              {{ item.maKhoaHoc }}
+                            </td>
+                            <td class="column3">{{ item.tenKhoaHoc }}</td>
+                            <td class="column5">
+                              <div class="example-button-row">
+                                <div class="example-flex-container">
+                                  <button
+                                    style="width: 40px"
+                                    mat-button
+                                    color="warn"
+                                    (click)="cancelCourse(item.maKhoaHoc)"
+                                  >
+                                    Huỷ
+                                  </button>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </ng-container>
+                    </table>
+                  </div>
+                  <ngb-pagination
+                    class="d-flex justify-content-end pt-3"
+                    [(page)]="pages"
+                    [pageSize]="pageSizes"
+                    [collectionSize]="CourseConfirmed.length"
+                    size="sm"
+                  ></ngb-pagination>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(window).on("load", function () {
+    $("#modalRegisterUser").modal("show");
+  });
+</script>

@@ -167,65 +167,22 @@ tbody tr:hover {
 }
 
 @media screen and (max-width: 992px) {
-  table {
-    display: inline-block;
+  // .column5 {
+  //   width: 150px;
+  // }
+  .table100-head {
+    font-size: 12px !important;
   }
-  table > *,
-  table tr,
-  table td,
-  table th {
-    display: inline-block;
-  }
-  table thead {
-    display: inline-block;
-  }
-  table tbody tr {
-    height: auto;
-    padding: 0 0;
-  }
-  table tbody tr td {
-    padding-left: 40% !important;
-    margin-bottom: 24px;
-  }
-  table tbody tr td:last-child {
-    margin-bottom: 0;
-  }
-  table tbody tr td:before {
-    font-family: OpenSans-Regular;
-    font-size: 14px;
-    color: #999999;
-    line-height: 1.2;
-    font-weight: unset;
-    position: absolute;
-    width: 40%;
-    left: 30px;
-    top: 0;
-  }
-  //   table tbody tr td:nth-child(1):before {
-  //     content: "Date";
-  //   }
-  //   table tbody tr td:nth-child(2):before {
-  //     content: "Order ID";
-  //   }
-  //   table tbody tr td:nth-child(3):before {
-  //     content: "Name";
-  //   }
-  //   table tbody tr td:nth-child(4):before {
-  //     content: "Price";
-  //   }
-  //   table tbody tr td:nth-child(5):before {
-  //     content: "Quantity";
-  //   }
-  //   table tbody tr td:nth-child(6):before {
-  //     content: "Total";
-  //   }
-
   .column4,
   .column5,
   .column6 {
     text-align: left;
   }
-
+  .column4,
+  .column6 {
+    display: none !important;
+  }
+  .column7,
   .column4,
   .column5,
   .column6,
@@ -233,6 +190,7 @@ tbody tr:hover {
   .column2,
   .column3 {
     width: 100%;
+    font-size: 15px !important;
   }
 
   tbody tr {
@@ -241,12 +199,30 @@ tbody tr:hover {
 }
 
 @media (max-width: 576px) {
+  .table {
+    font-size: 12px !important;
+    display: block;
+  }
   .container-table100 {
-    padding-left: 15px;
-    padding-right: 15px;
+    width: 100%;
     font-size: 12px;
   }
-  .column1 {
+  .column1,
+  .column4,
+  .column6 {
     display: none !important;
+  }
+  .column4,
+  .column5,
+  .column6,
+  .column1,
+  .column2,
+  .column3 {
+    overflow: hidden;
+  }
+}
+@media (max-width: 441px) {
+  .column5 {
+    display: none;
   }
 }

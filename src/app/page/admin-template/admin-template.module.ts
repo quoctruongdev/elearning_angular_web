@@ -8,9 +8,11 @@ import { HeaderAdminComponent } from './_components/header-admin/header-admin.co
 import { SideNavComponent } from './_components/side-nav/side-nav.component';
 import { EditUserComponent } from './user-management/edit-user/edit-user.component';
 import { FormsModule } from '@angular/forms';
-import { ResgiserCouserComponent } from './course-management/resgiser-couser/resgiser-couser.component';
+
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from 'src/app/_core/shares/material.module';
+import { RegisterUserComponent } from './user-management/register-user/register-user.component';
+import { RegisterCourseComponent } from './course-management/register-course/register-course.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,12 @@ import { MaterialModule } from 'src/app/_core/shares/material.module';
     HeaderAdminComponent,
     SideNavComponent,
     EditUserComponent,
-    ResgiserCouserComponent,
+    RegisterUserComponent,
+    RegisterCourseComponent,
   ],
   imports: [
     CommonModule,
+
     AdminTemplateRoutingModule,
     ComponentsModule,
     NgAntdModule,

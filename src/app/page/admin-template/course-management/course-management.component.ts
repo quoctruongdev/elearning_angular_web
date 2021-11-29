@@ -43,4 +43,35 @@ export class CourseManagementComponent implements OnInit {
         }
       });
   }
+
+  listUserWaitingReview: any[] = [];
+  listUserConfirmed: any[] = [];
+  courseID: any = {
+    maKhoaHoc: '',
+  };
+
+  userReview(event: any) {
+    this.courseID.maKhoaHoc = event;
+    this.data
+      .post('QuanLyNguoiDung/LayDanhSachHocVienChoXetDuyet', this.courseID)
+      .subscribe((result: any) => {
+        this.listUserWaitingReview = result;
+        this.shareData.sharingIDCourseReview(this.courseID.maKhoaHoc);
+        this.shareData.sharingUser(result);
+      });
+
+    this.data
+      .post('QuanLyNguoiDung/LayDanhSachNguoiDungChuaGhiDanh', this.courseID)
+      .subscribe((result: any) => {
+        this.listUserWaitingReview = result;
+        this.shareData.sharingCourseReview(result);
+      });
+
+    this.data
+      .post('QuanLyNguoiDung/LayDanhSachHocVienKhoaHoc', this.courseID)
+      .subscribe((result: any) => {
+        this.listUserConfirmed = result;
+        this.shareData.sharingCourseConfirmed(result);
+      });
+  }
 }
