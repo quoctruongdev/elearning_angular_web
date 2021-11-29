@@ -25,7 +25,7 @@ export class RegisterCourseComponent implements OnInit {
     this.shareData.shareDataUser.subscribe(
       (result: any) => (
         (this.listUserWaitingReview = result),
-        console.log('hhhh', this.listUserWaitingReview)
+        
       )
     );
     this.shareData.shareCourseConfirmed.subscribe(
@@ -47,14 +47,14 @@ export class RegisterCourseComponent implements OnInit {
   };
 
   chooseCourse(event: any) {
-    console.log('lll', event);
+    
     this.selectedValue = event;
   }
 
   registerUser(): void {
     this.item.taiKhoan = this.selectedValue;
     this.item.maKhoaHoc = this.CousreID;
-    console.log('object', this.item);
+    
     this.data
       .postCourse(this.item,'QuanLyKhoaHoc/GhiDanhKhoaHoc')
       .subscribe((result: any) => {
@@ -67,7 +67,7 @@ export class RegisterCourseComponent implements OnInit {
   confirmUser(value: any): void {
     this.item.taiKhoan = value;
     this.item.maKhoaHoc = this.CousreID;
-    console.log('object', this.item);
+    
     this.data
       .postCourse(this.item,'QuanLyKhoaHoc/GhiDanhKhoaHoc')
       .subscribe((result: any) => {
