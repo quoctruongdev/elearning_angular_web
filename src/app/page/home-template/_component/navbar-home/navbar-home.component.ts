@@ -27,7 +27,7 @@ export class NavbarHomeComponent implements OnInit {
   checkLog() {
     this.getLocal = localStorage.getItem('User');
     this.user = JSON.parse(this.getLocal);
-    console.log(this.user);
+    
     if (!this.user) {
       this.checkLogin = false;
       this.checkLogin1 = true;
