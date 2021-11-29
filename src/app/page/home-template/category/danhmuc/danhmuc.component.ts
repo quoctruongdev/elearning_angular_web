@@ -24,8 +24,7 @@ export class DanhmucComponent implements OnInit {
       maKhoaHoc: this.danhmucData.maKhoaHoc,
       taiKhoan: this.taiKhoan.taiKhoan,
     };
-    console.log(thongtin);
-    console.log(this.taiKhoan.taiKhoan);
+    
     this.dataService
       .postCourse(thongtin, 'QuanLyKhoaHoc/GhiDanhKhoaHoc')
       .subscribe((result: any) => {
