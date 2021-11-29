@@ -30,8 +30,7 @@ export class UserComponent implements OnInit {
     ).subscribe((user) => {
       this.changeInfoUser = user[0];
 
-      console.log(user);
-      console.log(this.changeInfoUser?.hoTen);
+      
     });
   }
   update(updateForm: any) {
@@ -54,7 +53,7 @@ export class UserComponent implements OnInit {
       'QuanLyNguoiDung/LayDanhSachKhoaHocDaXetDuyet',
       course
     ).subscribe((result: any) => {
-      console.log(result);
+      
       this.userListCourse = result;
     });
   }
@@ -63,10 +62,10 @@ export class UserComponent implements OnInit {
       taiKhoan: this.parseUser.taiKhoan,
       maKhoaHoc: deleteCourse,
     };
-    console.log(course);
+    
     this.API.postCourse(course, 'QuanLyKhoaHoc/HuyGhiDanh').subscribe(
       (result: any) => {
-        console.log(result);
+        
       }
     );
   }
