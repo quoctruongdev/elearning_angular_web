@@ -23,10 +23,7 @@ export class RegisterCourseComponent implements OnInit {
 
   constructor(private shareData: ShareDataService, private data: DataService) {
     this.shareData.shareDataUser.subscribe(
-      (result: any) => (
-        (this.listUserWaitingReview = result),
-        
-      )
+      (result: any) =>  (this.listUserWaitingReview = result)
     );
     this.shareData.shareCourseConfirmed.subscribe(
       (result: any) => (this.listUserConfirmed = result)
